@@ -40,8 +40,7 @@ This is a sample for Android devices demoing how to translate 2D/3D file by Forg
 * Once the translation status is completed, click [Show thumbnail] to get the thumbnail and display it in the image box blow. You may see "get thumbnail failed" if translation is still not in progress, you can try again latter. 
 * Click [Launch Viewer] to launch the viewer in a WebGL enabled browser. It is tested on the default browser of the device. If you have problems with this step, you can look into console of browser with USB debugging. The code loads the viewer by the host demo: http://models.autodesk.io/ whose format of url is: http://models.autodesk.io/viewer.html?urn=<your urn>&token=<your token>.
   
-  ![](DemoModel/app.png=250x480)
-  ![](DemoModel/viewer.png=250x480)
+  ![](DemoModel/app.png)   ![](DemoModel/viewer.png)
 
 
 
