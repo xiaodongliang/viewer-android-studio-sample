@@ -16,27 +16,20 @@ Sample on Workflow of Forge Viewer by Android Studio
 
 This is a sample for Android devices demoing how to translate 2D/3D file by Forge platform, and view them in the browser of mobile.
 
-* Get an access token by [Forge Authentication API] (https://developer.autodesk.com/en/docs/oauth/v2)
+* Get an access token by [Forge Authentication API](https://developer.autodesk.com/en/docs/oauth/v2)
 * Create a bucket by [Forge Data Management API](https://developer.autodesk.com/en/docs/data/v2)
 * Upload a 2D/3D design file / model by [Forge Data Management API](https://developer.autodesk.com/en/docs/data/v2)
-* Post a job to translate the model to the Forge Viewer format by [Forge Model Derivative API] (https://developer.autodesk.com/en/docs/model-derivative/v2)
-* Download the model thumbnail by [Forge Model Derivative API] (https://developer.autodesk.com/en/docs/model-derivative/v2)
+* Post a job to translate the model to the Forge Viewer format by [Forge Model Derivative API](https://developer.autodesk.com/en/docs/model-derivative/v2)
+* Download the model thumbnail by [Forge Model Derivative API](https://developer.autodesk.com/en/docs/model-derivative/v2)
 * Display the model in your browser by the workflow of [Forge Viewer](https://developer.autodesk.com/en/docs/viewer/v2/)
 
 ## Setup
 
 * Install [Adroind Studio] (https://developer.android.com/studio/index.html/) and the neccesary API SDK. In this test, [Android API SDK](https://developer.android.com/sdk/download.html) version 28 is installed. 
 * Download and build Forge library by [Forge JAVA SDK](https://github.com/Autodesk-Forge/forge-api-java-client). Copy all *    .jar (except httpcore-4.4.1.jar and httpclient-4.5.jar) in the target>>lib folder to [app>>lib folder](app/libs)of this sample. For convenience, these .jar are already included in the project. However please syncronize with [Forge JAVA SDK](https://github.com/Autodesk-Forge/forge-api-java-client) if it has new commits.
-* Make sure to provide test models in the extension storage of the emulator or physical mobile. To copy a file to emulator, [Android Device Monitor](https://developer.android.com/studio/profile/monitor.html) can be used. Or, copy by [adb in command line](https://stackoverflow.com/questions/30434451/how-to-push-files-to-an-emulator-instance-using-android-studio). A test model has been provided a model at [demomodel/RevitNative.rvt].  
+* Make sure to provide test models in the extension storage of the emulator or physical mobile. To copy a file to emulator, [Android Device Monitor](https://developer.android.com/studio/profile/monitor.html) can be used. Or, copy by [adb in command line](https://stackoverflow.com/questions/30434451/how-to-push-files-to-an-emulator-instance-using-android-studio). A test model has been provided a model at [DemoModel/RevitNative.rvt].  
 * Visit the [Forge Developer Portal](https://developer.autodesk.com), sign up for an account, then [create an app](https://developer.autodesk.com/myapps/create).Copy API key and secret to line 15 and line 16 in [Global.java](app/src/main/java/com/autodesk/forge/forgeviewer_android_sample/Global.java)
 * Build the app and fix any errors
-
-## APK Demo
-
-* Download [ForgeAndroidTestView.apk_]()
-  and rename it to ForgeAndroidTestView.apk.
-* Install it on your Android device.
-* Run the app 'ForgeAndroidTestView'.
 
 ## Usage
 * Open the App on android device or emulator, click [Get Token] >> token should appear in the text box.
@@ -45,7 +38,13 @@ This is a sample for Android devices demoing how to translate 2D/3D file by Forg
 * Click [Upload Model] to upload the model file, the URN appears in the text box  once file is uploaded.
 * Click [Post Job] to send a job to translate the model, status shows up in text box.
 * Once the translation status is completed, click [Show thumbnail] to get the thumbnail and display it in the image box blow. You may see "get thumbnail failed" if translation is still not in progress, you can try again latter. 
-* Click [Launch Viewer] to launch the viewer in a WebGL enabled browser. It is tested on the default browser of the device. If you have problems with this step, you can look into console of browser with USB debugging.  
+* Click [Launch Viewer] to launch the viewer in a WebGL enabled browser. It is tested on the default browser of the device. If you have problems with this step, you can look into console of browser with USB debugging. The code loads the viewer by the host demo: http://models.autodesk.io/ whose format of url is: http://models.autodesk.io/viewer.html?urn=<your urn>&token=<your token>.
+  
+  [![thumbnail](DemoModel/app.png)]
+  [![thumbnail](DemoModel/viewer.png)]
+
+
+
 
 ## License
 
